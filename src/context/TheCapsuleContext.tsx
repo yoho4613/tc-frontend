@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
 import web3modal from "web3modal";
-import { TheCapsuleAddress, TheCapsuleAbi } from "./constants.ts";
+import { TheCapsuleAddress, TheCapsuleAbi } from "./constants";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 import axios from "axios";
 import { ethers } from "ethers";
 import { Buffer } from "buffer";
-import { getPinataImageURL } from "../config/api.ts";
+import { getPinataImageURL } from "../config/api";
 
 const projectId = "";
 const projectSecretKey = "";
@@ -210,7 +210,7 @@ export const TheCapsuleProvider = ({
       // const provider = new ethers.JsonRpcProvider();
       const contract = await connectingWithSmartContract();
       if (!contract) {
-        return;
+        return [];
       }
 
       const data = await contract.fetchCapsuleItem();

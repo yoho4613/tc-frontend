@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./pages/App.tsx";
-import reportWebVitals from "./reportWebVitals";
+import App from "./pages/App";
 import "./API/emailjsAPI.ts";
 import { TheCapsuleProvider } from "./context/TheCapsuleContext.tsx";
 import { UserContextProvider } from "./context/UserContext.tsx";
@@ -27,5 +26,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-reportWebVitals();

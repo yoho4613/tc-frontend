@@ -1,13 +1,14 @@
+import React from "react";
 import { FC, useState } from "react";
 
 import { FiSearch } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 interface SearchbarProps {
-  category?: string;
+  category: string;
 }
 
-const Searchbar: FC<SearchbarProps> = ({ category }) => {
+const Searchbar = ({ category }: SearchbarProps) => {
   const router = useNavigate();
   const [input, setInput] = useState("");
   const [isSearching, setIsSearching] = useState(false);
