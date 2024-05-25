@@ -9,6 +9,7 @@ import PostPage from "./Post/PostPage.tsx";
 
 import ProfilePage from "./ProfilePage.tsx";
 import CreateCapsulePage from "./CreateCapsulePage.tsx";
+import CreatePage from "./Post/CreatePage.tsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/board/post/:id" Component={PostPage} />
         <Route path="/profile" Component={ProfilePage} />
         <Route path="/createCapsule" Component={CreateCapsulePage} />
+        <Route path="/post/create" Component={CreatePage} />
         <Route Component={NotFoundPage} />
       </Routes>
     </Router>

@@ -106,17 +106,6 @@ const Navbar = () => {
               About
             </Link>
           </li> */}
-          {!user && (
-            <li className="hover-underline-animation bg-slate-200 p-2.5 md:bg-transparent md:p-0">
-              <Link
-                onClick={() => setMobileMenuOpened(false)}
-                className="inline-block w-full"
-                to="/login"
-              >
-                Login
-              </Link>
-            </li>
-          )}
         </ul>
       </div>
       <div className="order-3 flex items-center ">
@@ -172,19 +161,16 @@ const Navbar = () => {
                   color="white"
                   className="mr-2 text-xl"
                 />
-                My Order
+                My Capsules
               </Link>
               <Link to="/" className="flex w-full items-center p-2 text-left">
                 <AiOutlineStar color="white" className="mr-2 text-xl" />
-                My Reviews
+                My Wallet
               </Link>
-              <button
-                // onClick={() => void signOut()}
-                className="flex w-full items-center p-2 text-left"
-              >
+              <div className="flex w-full items-center p-2 text-left">
                 <BiLogOut color="white" className="mr-2 text-xl" />
-                Logout
-              </button>
+                <LogoutButton />
+              </div>
             </div>
           )}
         </div>

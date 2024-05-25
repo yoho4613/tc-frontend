@@ -20,7 +20,6 @@ ReactDOM.render(
         >
           <App />
         </Auth0Provider>
-        ,
       </TheCapsuleProvider>
     </UserContextProvider>
   </React.StrictMode>,
