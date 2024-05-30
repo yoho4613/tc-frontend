@@ -4,24 +4,20 @@ import "./index.css";
 import App from "./pages/App";
 import "./API/emailjsAPI.ts";
 import { TheCapsuleProvider } from "./context/TheCapsuleContext.tsx";
-import { UserContextProvider } from "./context/UserContext.tsx";
 import { Auth0Provider } from "@auth0/auth0-react";
-
 ReactDOM.render(
   <React.StrictMode>
-    <UserContextProvider>
+    <Auth0Provider
+      domain={process.env.REACT_APP_AUTH0_BASE_URL!}
+      clientId={process.env.REACT_APP_AUTH0_CLIENT_ID!}
+      authorizationParams={{
+        redirect_uri: window.location.origin + "/board",
+      }}
+    >
       <TheCapsuleProvider>
-        <Auth0Provider
-          domain={process.env.REACT_APP_AUTH0_BASE_URL!}
-          clientId={process.env.REACT_APP_AUTH0_CLIENT_ID!}
-          authorizationParams={{
-            redirect_uri: window.location.origin + "/board",
-          }}
-        >
-          <App />
-        </Auth0Provider>
+        <App />
       </TheCapsuleProvider>
-    </UserContextProvider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

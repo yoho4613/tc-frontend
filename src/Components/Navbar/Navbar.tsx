@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineLoading3Quarters, AiOutlineStar } from "react-icons/ai";
 import { PiShoppingBagOpenLight } from "react-icons/pi";
 import { BsPerson } from "react-icons/bs";
 import { RiMenu2Fill } from "react-icons/ri";
 import { RxAvatar } from "react-icons/rx";
 import Searchbar from "../Search/Searchbar";
-import { UserContext } from "../../context/UserContext";
 import LoginButton from "../Buttons/LoginButton";
 import LogoutButton from "../Buttons/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -19,35 +18,25 @@ const Navbar = () => {
   const [category, setCategory] = useState("all");
   const popupRef = useRef<HTMLUListElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
-  const { userDetail, login } = useContext(UserContext);
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [searchParam, setSearchParam] = useSearchParams();
 
   useEffect(() => {
-    getUserDetail();
     setCategory(searchParam.get("category") || "all");
   }, [searchParam]);
 
-  const getUserDetail = async () => {
-    const auth = await fetch(`${process.env.REACT_APP_API_URL}/auth/profile`)
-      .then((res) => {
-        res.json();
-      })
-      .then((res) => {
-        console.log(res);
-        return res;
-      })
-      .catch((err) => console.log(err));
-  };
-
+  useEffect(() => {
+    console.log(user);
+    console.log(isAuthenticated);
+  }, [user]);
   return (
-    <nav className="relative flex w-full items-center justify-between sm:px-4 text-gray-700 ">
-      <div className="order-4 md:order-2 md:w-1/3 ">
+    <nav className="relative flex max-w-full items-center justify-between px-2 sm:px-4 py-2 text-gray-700 ">
+      <div className="md:w-1/3 ">
         <button
           className="flex items-center md:hidden"
           onClick={() => setMobileMenuOpened((prev) => !prev)}
         >
-          <RiMenu2Fill className="text-xl sm:text-3xl" />
+          <RiMenu2Fill className="text-2xl sm:text-3xl" />
         </button>
 
         <ul
@@ -70,57 +59,25 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          {/* <li className="hover-underline-animation bg-slate-200 p-2.5 md:bg-transparent md:p-0">
-            <Link
-              onClick={() => setMobileMenuOpened(false)}
-              className="inline-block w-full"
-              to="/"
-            >
-              Home
-            </Link>
-          </li>
-          <li className="hover-underline-animation bg-slate-200 p-2.5 md:bg-transparent md:p-0">
-            <Link
-              onClick={() => setMobileMenuOpened(false)}
-              className="inline-block w-full"
-              to="/list?category=all&subcategory=all"
-            >
-              Shop
-            </Link>
-          </li>
-          <li className="hover-underline-animation bg-slate-200 p-2.5 md:bg-transparent md:p-0">
-            <Link
-              onClick={() => setMobileMenuOpened(false)}
-              className="inline-block w-full"
-              to="/contact"
-            >
-              Contact
-            </Link>
-          </li>
-          <li className="hover-underline-animation bg-slate-200 p-2.5 md:bg-transparent md:p-0">
-            <Link
-              onClick={() => setMobileMenuOpened(false)}
-              className="inline-block w-full"
-              to="/about"
-            >
-              About
-            </Link>
-          </li> */}
         </ul>
       </div>
-      <div className="order-3 flex items-center ">
-        <div className="relative mr-2 w-44 text-xs md:mr-6 md:w-64 ">
+      <div className="flex items-center justify-end gap-4 grow">
+        <div className="relative mr-2 w-44 border rounded-md text-xs md:mr-6 md:w-64 ">
           <Searchbar category={category} />
         </div>
         <div className="relative flex gap-1 items-center">
-          <div className="hidden md:block">
-            {isAuthenticated ? (
+          <div className="flex items-center">
+            {isLoading ? (
+              <div>
+                <AiOutlineLoading3Quarters />
+              </div>
+            ) : isAuthenticated ? (
               <>
                 {user && (
                   <button onClick={() => setProfileOpened((prev) => !prev)}>
-                    {user.image ? (
+                    {user.picture ? (
                       <img
-                        src={user.image || ""}
+                        src={user.picture || ""}
                         alt="avatar"
                         width={100}
                         height={100}
@@ -128,8 +85,7 @@ const Navbar = () => {
                       />
                     ) : (
                       <RxAvatar
-                        onClick={() => login()}
-                        color="#DB4444"
+                        color="#57f542"
                         className="text-lg sm:text-2xl"
                       />
                     )}

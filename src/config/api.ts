@@ -47,12 +47,9 @@ export const viewPost = async (postId: string) => {
       return res;
     })
     .then((res) => {
-      console.log(res.json());
       return res.json();
     })
     .catch((err) => console.log(err));
-
-  console.log(res);
 
   return res;
 };
