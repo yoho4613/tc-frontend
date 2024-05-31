@@ -10,12 +10,8 @@ import PostPage from "./Post/PostPage.tsx";
 import ProfilePage from "./ProfilePage.tsx";
 import CreateCapsulePage from "./CreateCapsulePage.tsx";
 import CreatePage from "./Post/CreatePage.tsx";
-import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const { isAuthenticated, user, loginWithRedirect } = useAuth0();
-  console.log(isAuthenticated);
-  console.log(user);
   return (
     <div className="max-w-screen overflow-x-hidden">
       <Router>
