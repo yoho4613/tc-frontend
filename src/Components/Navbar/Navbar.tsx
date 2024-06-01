@@ -18,17 +18,20 @@ const Navbar = () => {
   const [category, setCategory] = useState("all");
   const popupRef = useRef<HTMLUListElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
+    useAuth0();
   const [searchParam, setSearchParam] = useSearchParams();
 
   useEffect(() => {
     setCategory(searchParam.get("category") || "all");
+    // const token = getAccessTokenSilently().then((res) => console.log(res));
   }, [searchParam]);
 
   useEffect(() => {
     console.log(user);
     console.log(isAuthenticated);
   }, [user]);
+
   return (
     <nav className="relative flex max-w-full items-center justify-between px-2 sm:px-4 py-2 text-gray-700 ">
       <div className="md:w-1/3 ">
@@ -99,7 +102,7 @@ const Navbar = () => {
           {profileOpened && (
             <div
               ref={profileRef}
-              className="absolute right-0 top-6 z-[999] flex w-44 flex-col rounded-sm px-2.5 text-sm text-whitePrimary sm:w-[20rem] sm:text-lg"
+              className="absolute right-0 top-6 z-[999] flex w-44 flex-col rounded-sm px-2.5 text-sm text-white sm:w-[20rem] sm:text-lg"
               style={{ background: "rgba(0,0,0,0.5)" }}
             >
               <Link

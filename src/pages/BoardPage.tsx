@@ -14,8 +14,6 @@ const BoardPage = () => {
   const [searchParam, setSearchParam] = useSearchParams();
   const router = useNavigate();
 
-  console.log(isAuthenticated);
-
   useEffect(() => {
     if (!searchParam.has("category")) {
       router("/board");
