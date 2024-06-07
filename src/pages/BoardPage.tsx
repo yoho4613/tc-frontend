@@ -66,9 +66,9 @@ const BoardPage = () => {
           </button>
         </div>
         <div className="flex w-full">
-          <p className="border w-4/5 p-2 font-bold">Name</p>
-          <p className="border w-16 p-2 font-bold">View</p>
-          <p className="border w-24 p-2 font-bold">Author</p>
+          <p className="border w-[85%] p-2 font-bold">Name</p>
+          <p className="border w-[5%] p-2 font-bold">View</p>
+          <p className="border w-[10%] p-2 font-bold">Author</p>
         </div>
         <div className="w-full">
           {filteredPosts
@@ -84,16 +84,22 @@ const BoardPage = () => {
                   index % 2 === 0 ? "bg-gray-100" : "bg-white "
                 }`}
               >
-                <a className="w-4/5 p-2 border" href={`/board/post/${post.id}`}>
+                <a
+                  className="w-[85%] p-2 border"
+                  href={`/board/post/${post.id}`}
+                >
                   <h2 className="text-lg w-2/3 font-bold mb-2">{post.title}</h2>
                   <p className="text-xs">
                     {new Date(post.createdAt).toLocaleDateString()}
                   </p>
                 </a>
-                <a className="w-16 p-2 border" href={`/board/post/${post.id}`}>
+                <a
+                  className="w-[5%] p-2 border"
+                  href={`/board/post/${post.id}`}
+                >
                   {post.views}
                 </a>
-                <p className="w-24 p-2 border">{post.author.username}</p>
+                <p className="w-[10%] p-2 border">{post.author.username}</p>
               </div>
             ))}
         </div>

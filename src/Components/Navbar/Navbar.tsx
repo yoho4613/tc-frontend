@@ -65,12 +65,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center justify-end gap-4 grow">
-        <div className="relative mr-2 w-44 border rounded-md text-xs md:mr-6 md:w-64 ">
+        <div className="relative mr-2 ml-2 w-full border rounded-md text-xs md:mr-6 md:w-64 ">
           <Searchbar category={category} />
         </div>
         <div className="relative flex gap-1 items-center">
           <div className="flex items-center">
-            {isLoading ? (
+            {/* {isLoading ? (
               <div>
                 <AiOutlineLoading3Quarters />
               </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
               </>
             ) : (
               <LoginButton />
-            )}
+            )} */}
           </div>
           {profileOpened && (
             <div
