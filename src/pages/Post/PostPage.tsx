@@ -12,7 +12,8 @@ const PostPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { isAuthenticated, user } = useAuth0();
   const [comment, setComment] = useState("");
-
+  const [reportPopup, setReportPopup] = useState(false);
+  const [reportComment, setReportComment] = useState("");
   useEffect(() => {
     if (id) {
       fetchPost(id);
@@ -82,6 +83,11 @@ const PostPage = () => {
     });
   };
 
+  const reportPost = async (postId: string) => {
+    alert("Reported Successfully");
+    setReportPopup(false);
+  };
+
   if (isLoading) return <div>Loading...</div>;
 
   if (!post) return <div>Post not found</div>;
@@ -96,8 +102,43 @@ const PostPage = () => {
         >
           <BiArrowBack /> Back to Board
         </button>
+        <button
+          onClick={() => setReportPopup(true)}
+          className="rounded-lg border-2 bg-red-500 text-white font-bold hover:bg-red-600 transition-all focus:bg-red-600 flex items-center px-2 py-1 "
+        >
+          Report
+        </button>
       </div>
       <div className="p-4 sm:w-[90%] m-auto">
+        {reportPopup && (
+          <div className="fixed top-0 left-0 w-screen gap-6 h-screen bg-[rgba(0,0,0,0.4)] flex justify-center items-center ">
+            <div className="bg-white p-4 flex w-1/2 flex-col justify-center items-center ">
+              <div className="flex gap-4 flex-col mb-6 w-[70%]">
+                <label htmlFor="">Reason of Report</label>
+                <textarea
+                  value={reportComment}
+                  onChange={(e) => setReportComment(e.target.value)}
+                  className="border p-1 "
+                  placeholder="type here..."
+                />
+              </div>
+              <div className="flex justify-center gap-6">
+                <button
+                  onClick={() => reportPost(post.id)}
+                  className="rounded-lg border-2 bg-red-500 text-white font-bold hover:bg-red-600 transition-all focus:bg-red-600 flex items-center px-2 py-1 "
+                >
+                  Report
+                </button>
+                <button
+                  onClick={() => setReportPopup(false)}
+                  className="rounded-lg border-2 bg-red-500 text-white font-bold hover:bg-red-600 transition-all focus:bg-red-600 flex items-center px-2 py-1 "
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         <div>
           <p className="text-center mb-6 text-gray-500">
             {new Date(post.createdAt).toDateString()}
