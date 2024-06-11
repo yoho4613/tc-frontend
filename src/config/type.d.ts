@@ -6,15 +6,19 @@ type Comment = {
   createdAt: string;
 };
 
+type Category = {
+  name: string;
+  createdAt: Date;
+};
+
 type Post = {
   id: string;
   title: string;
   content: string;
   description: string;
   image: string[];
-  category: string;
   createdAt: string;
-  authorId: string;
+  authorId: Date;
   author: User;
   category: Category;
   categoryId: string;
@@ -25,7 +29,7 @@ type Post = {
     content: string;
     postId: string;
     userId: string;
-    createdAt: string;
+    createdAt: Date;
     user: User;
   }[];
 };

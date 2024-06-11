@@ -26,24 +26,20 @@ const BoardPage = () => {
 
   useEffect(() => {
     if (posts.length) {
+      console.log(posts);
       const category = searchParam.get("category");
       if (!category || category === "all") {
         setFilteredPosts(posts);
       } else {
-        setFilteredPosts(posts.filter((post) => post.category === category));
+        setFilteredPosts(
+          posts.filter(
+            (post) =>
+              post.category.name.toLowerCase() === category.toLowerCase()
+          )
+        );
       }
     }
-
-    if (searchParam.get("search") && filteredPosts.length) {
-      setFilteredPosts((prev) =>
-        prev.filter((post) =>
-          post.title
-            .toLowerCase()
-            .includes(searchParam.get("search")?.toLowerCase() as string)
-        )
-      );
-    }
-  }, [posts]);
+  }, [posts, searchParam]);
 
   const createPost = () => {
     if (!isAuthenticated || !user) {
@@ -54,7 +50,7 @@ const BoardPage = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar />
       <div className="p-2 border">
         <div className="flex justify-end mb-2">

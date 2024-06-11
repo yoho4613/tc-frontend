@@ -112,7 +112,7 @@ const PostPage = () => {
       <div className="p-4 sm:w-[90%] m-auto">
         {reportPopup && (
           <div className="fixed top-0 left-0 w-screen gap-6 h-screen bg-[rgba(0,0,0,0.4)] flex justify-center items-center ">
-            <div className="bg-white p-4 flex w-1/2 flex-col justify-center items-center ">
+            <div className="bg-white p-4 flex w-2/3 flex-col justify-center items-center ">
               <div className="flex gap-4 flex-col mb-6 w-[70%]">
                 <label htmlFor="">Reason of Report</label>
                 <textarea

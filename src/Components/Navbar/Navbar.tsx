@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <ul
           ref={popupRef}
-          className={`absolute left-0 top-16 z-50 flex h-screen w-full flex-col bg-[rgba(0,0,0,0.6)] text-lg transition md:relative md:top-0  md:h-auto md:translate-x-0 md:flex-row md:justify-between md:bg-transparent md:transition-none ${
+          className={`absolute left-0 top-10 z-50 flex h-screen w-full flex-col bg-[rgba(0,0,0,0.6)] text-lg transition md:relative md:top-0  md:h-auto md:translate-x-0 md:flex-row md:justify-between md:bg-transparent md:transition-none ${
             mobileMenuOpened ? "translate-x-0" : "translate-x-full"
           }`}
         >
