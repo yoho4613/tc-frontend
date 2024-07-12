@@ -26,6 +26,7 @@ function TermsAndConditions() {
           ))}
         </div>
       </div>
+      <div className="mb-[10rem]"></div>
       <Footer />
     </div>
   );
