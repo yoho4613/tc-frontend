@@ -1,51 +1,54 @@
 Terms and conditions
 
-
 By using our service, you agree to these terms and conditions. Please read them carefully.
 
 1. Introduction
-Our service provides a secure way to store and manage your digital assets on the Ethereum blockchain. Transactions are transparent and can be verified on Etherscan. 
+Welcome to Capsule Board! By using our service, you agree to these terms and conditions. Please read them carefully.
 
 2. Account Creation and Management
-You must provide a valid blockchain address to create an account. You are responsible for maintaining the security of your account and password.
+Eligibility: You must be at least 17 years old to use Capsule Board.
+Account Registration: You must register with a valid email address and password or use the Sign in with Apple option. You are responsible for maintaining the security of your account and password.
+Capsule Wallet: Upon registration, you can create or import an Ethereum wallet. Ensure the mnemonic phrase is securely stored.
 
 3. Service Usage
-Our service allows you to manage digital assets in USD. While backend transactions may involve cryptocurrencies, all charges to you will be in USD.
+Content Access: Viewing content is free for all users.
+Subscription Service: For $3 per month, you can make your wallet address public for community interactions. This is an introductory offer and may change.
+Transactions: Transactions can be verified on Etherscan. Future features may include blockchain cloud content storage.
 
 4. Intellectual Property
-Content created and shared on our platform is subject to copyright laws. We claim no intellectual property rights over the content you provide.
+User Content: Content created and shared on Capsule Board is subject to copyright laws. Capsule Board does not claim intellectual property rights over the content you provide.
 
 5. Dispute Resolution
-We are not responsible for resolving any disputes between users. Users are responsible for their interactions on our platform.
+User Interactions: Capsule Board is not responsible for resolving disputes between users. Users are responsible for their interactions on the platform.
 
 6. Compliance
-We may introduce compliance measures like KYC in the future to enhance user security and comply with legal requirements.
+KYC and Legal Requirements: Capsule Board may introduce compliance measures like Know Your Customer (KYC) in the future to enhance user security and comply with legal requirements.
 
 7. Amendments and Termination
-
-======================
-
-We reserve the right to modify these terms at any time. Your continued use of the service after any modification signifies your acceptance of the new terms.
+Modifications: Capsule Board reserves the right to modify these terms at any time, at its sole discretion. Any changes will be effective immediately upon posting in the app. By continuing to use the service after any modification, you signify your acceptance of the new terms.
+Termination: Capsule Board reserves the right to terminate your account for violations of these terms.
 Privacy Policy
 
 1. Information We Collect
-We collect device information, blockchain addresses, and transaction details related to your blockchain address.
+Device Information: We collect information about the devices you use to access Capsule Board.
+Blockchain Addresses: We collect and store blockchain addresses associated with your account.
+Transaction Details: We collect details of transactions related to your blockchain address.
 
 2. How We Use Your Information
-Your information is used to provide and improve our services, including maintaining your account and enabling transactions.
+Service Provision: Your information is used to provide and improve our services, including maintaining your account and enabling transactions.
+Enhancements: We may use your information to enhance your experience on Capsule Board.
 
 3. Sharing and Disclosure
-We do not share personal information with third parties except as required by law or to provide our services.
+Third Parties: We do not share personal information with third parties except as required by law or to provide our services.
 
 4. Data Protection
-We implement security measures to protect your information from unauthorized access, alteration, or destruction.
+Security Measures: We implement security measures to protect your information from unauthorized access, alteration, or destruction.
 
 5. Your Rights
-You have the right to access, correct, or delete your personal information stored with us at any time.
+Access and Correction: You have the right to access, correct, or delete your personal information stored with us at any time.
 
 6. Cookies and Other Technologies
-We may use cookies and similar technologies to enhance your experience on our platform.
+Cookies: We may use cookies and similar technologies to enhance your experience on Capsule Board.
 
 7. Changes to This Policy
-We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on our platform.
-
+Modifications: Capsule Board reserves the right to modify this privacy policy at any time, at its sole discretion. Any changes will be effective immediately upon posting in the app. By continuing to use the service after any modification, you signify your acceptance of the new policy.
