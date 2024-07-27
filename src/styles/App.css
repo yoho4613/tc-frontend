@@ -32,6 +32,7 @@
   justify-content: space-evenly;
   flex: 1;
   height: auto;
+  margin: auto;
   overflow-y: hidden;
 }
 
@@ -63,12 +64,12 @@
 
 .Site-content {
   flex: 1;
-  line-height: 1.5;
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   padding-bottom: 5%;
   overflow-y: auto;
   background-color: black;
+  height: 100%;
 }
 
 .Site-TermsAndConditions {
